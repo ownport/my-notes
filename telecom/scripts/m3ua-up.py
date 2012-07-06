@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-#   parse PDML data (tshark output), only M3UA protocol messages selected
+#   parse PDML data (tshark output), only M3UA and upper protocol messages selected
 #
 #
 __version__ = '0.1'
