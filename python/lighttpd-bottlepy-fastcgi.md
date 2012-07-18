@@ -1,6 +1,6 @@
 # bottle + lighttpd + fastcgi simply running
 
-[bottle + lighttpd + fastcgi simply running](http://notionbox.de/detail/3/)
+Source: [bottle + lighttpd + fastcgi simply running](http://notionbox.de/detail/3/)
 
 After messing around with bottle and lighttpd I finally found a solution that simply runs:
 
