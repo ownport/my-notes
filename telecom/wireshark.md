@@ -8,3 +8,8 @@ tshark -r <pcap_file> -T pdml | python m3ua-up.py
 ```
 m3ua-up.py script is available [m3ua-up.py](https://github.com/ownport/my-notes/blob/master/telecom/scripts/m3ua-up.py)
 
+* select messages for one call in BSSAP trace
+  - find 'setup' message by calling or called number 
+  - select slr and filter messages by this number 
+  - find dlr in RLSD message
+  - filter: sccp.slr==slr1||sccp.slr==slr2||sccp.dlr==slr1||scccp.dlr==slr2
