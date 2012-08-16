@@ -34,6 +34,15 @@
  (virtualenv)/local/lib
 ```
 
+### Additional directories 
+
+```
+ (virtualenv)/src
+ (virtualenv)/var
+ (virtualenv)/var/run
+ (virtualenv)/var/log
+```
+
 ### Checking What is Installed
 
 For listing all installed Python packages we can use yolk. This is a simple console program 
