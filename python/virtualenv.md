@@ -19,7 +19,7 @@
     
     ```$ _```
 
-### default directory structure after creation virtual environment
+### Default directory structure after creation virtual environment
 
 ```
  (virtualenv)/bin
@@ -43,7 +43,7 @@
  (virtualenv)/var/log
 ```
 
-### Checking What is Installed
+### Checking what is installed
 
 For listing all installed Python packages we can use yolk. This is a simple console program 
 which can list installed packages.
