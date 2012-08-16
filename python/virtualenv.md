@@ -68,4 +68,6 @@ yolk            - 0.4.3        - active
 ### Links
 
  * [Virtualenv Tutorial](http://simononsoftware.com/virtualenv-tutorial/)
+ * [Setting up a Django environment and project structure](http://www.gyford.com/phil/writing/2010/09/29/django-environment.php)
+ 
  
