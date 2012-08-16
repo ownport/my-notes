@@ -30,7 +30,8 @@ Installation under virtualenv is quite simple:
 
 Usage is even simpler:
 
-```(test-env)$ yolk -l
+```
+(test-env)$ yolk -l
 Python          - 2.7.3        - active development (/usr/lib/python2.7/lib-dynload)
 argparse        - 1.2.1        - active development (/usr/lib/python2.7)
 distribute      - 0.6.24       - active 
