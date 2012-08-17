@@ -181,7 +181,14 @@ Create GIT repository in (virtualenv)/src
 (test-env)$ git add .
 (test-env)$ git commit -m "Initial commit"
 ```
-
+Adding new files:
+```
+(test-env)$ git add file_or_folder_name
+```
+Committing more work:
+```
+(test-env)$ git commit -m 'commit details'
+```
 
 ### Links
 
