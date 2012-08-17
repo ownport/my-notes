@@ -28,7 +28,7 @@ virtualenv is a tool to create isolated Python environments.
 
 virtualenvwrapper is a set of extensions to Ian Bicking’s virtualenv tool. The extensions include wrappers for creating and deleting virtual environments and otherwise managing your development workflow, making it easier to work on more than one project at a time without introducing conflicts in their dependencies.
 
-*Wrappers*
+#### Wrappers
 
 The wrappers provided by virtualenvwrapper are:
 
@@ -40,7 +40,7 @@ The wrappers provided by virtualenvwrapper are:
  - cdvirtualenv (cd into the root of the current virtualenv)
  - deactivate (deactivate virtualenv, which calls several hooks)
 
-*Hooks*
+#### Hooks
 
 Hook files can be placed in ENV/bin/ and are simply plain-text files with shell commands. 
 virtualenvwrapper provides the following hooks:
@@ -60,7 +60,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper_bashrc
 ```
 
-*Links:*
+#### Links
 
  - [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)
  - [virtualenvwrapper](http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-05-virtualenvwrapper/index.html)
@@ -87,7 +87,7 @@ pip freeze > /path/to/requirements.txt
 ```
 This will inspect the current environment and generate a requirements files that contains explicit version number for each of the installed packages.
 
-*Links*
+#### Links
 
  - [Documentation for pip](http://www.pip-installer.org/en/latest/)
  
@@ -141,6 +141,6 @@ yolk            - 0.4.3        - active
 
 ### Links
 
- * [Setting up a Django environment and project structure](http://www.gyford.com/phil/writing/2010/09/29/django-environment.php)
+ - [Setting up a Django environment and project structure](http://www.gyford.com/phil/writing/2010/09/29/django-environment.php)
  
  
