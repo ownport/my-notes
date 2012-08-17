@@ -2,6 +2,8 @@
 
 ### Working in virtual environment
 
+virtualenv is a tool to create isolated Python environments.
+
  * Activate environment 'test-env'
 
     ```$ source bin/activate```
@@ -19,11 +21,47 @@
     
     ```$ _```
 
- * [Virtualenv Tutorial](http://simononsoftware.com/virtualenv-tutorial/)
+ - [virtualenv documentation](http://www.virtualenv.org/en/latest/index.html)
+ - [Virtualenv Tutorial](http://simononsoftware.com/virtualenv-tutorial/)
 
 ### virtualenvwrapper
 
- -  [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)
+virtualenvwrapper is a set of extensions to Ian Bicking’s virtualenv tool. The extensions include wrappers for creating and deleting virtual environments and otherwise managing your development workflow, making it easier to work on more than one project at a time without introducing conflicts in their dependencies.
+
+*Wrappers*
+
+The wrappers provided by virtualenvwrapper are:
+
+ - mkvirtualenv (create a new virtualenv)
+ - rmvirtualenv (remove an existing virtualenv)
+ - workon (change the current virtualenv)
+ - add2virtualenv (add external packages in a .pth file to current virtualenv)
+ - cdsitepackages (cd into the site-packages directory of current virtualenv)
+ - cdvirtualenv (cd into the root of the current virtualenv)
+ - deactivate (deactivate virtualenv, which calls several hooks)
+
+*Hooks*
+
+Hook files can be placed in ENV/bin/ and are simply plain-text files with shell commands. 
+virtualenvwrapper provides the following hooks:
+
+ - postmkvirtualenv
+ - prermvirtualenv
+ - postrmvirtualenv
+ - postactivate
+ - predeactivate
+ - postdeactivate
+
+Add two lines to your .bashrc to set the location where the virtual environments should live 
+and the location of the script installed with this package:
+
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper_bashrc
+
+*Links:*
+
+ - [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)
+ - [virtualenvwrapper](http://www.doughellmann.com/articles/pythonmagazine/completely-different/2008-05-virtualenvwrapper/index.html)
  - Rich Leland has created a [short screencast](http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/) showing off the features of virtualenvwrapper. 
  - User and developer [documentation](http://virtualenvwrapper.readthedocs.org/)
 
