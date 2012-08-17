@@ -193,5 +193,6 @@ Committing more work:
 ### Links
 
  - [Setting up a Django environment and project structure](http://www.gyford.com/phil/writing/2010/09/29/django-environment.php)
+ - [Best practices to work with 3rd party applications](https://code.djangoproject.com/wiki/BestPracticesToWorkWith3rdPartyAppsAndMakingYoursPortable)
  
  
