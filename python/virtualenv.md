@@ -19,30 +19,6 @@
     
     ```$ _```
 
-### Default directory structure after creation virtual environment
-
-```
- (virtualenv)/bin
- (virtualenv)/include
- (virtualenv)/lib
- (virtualenv)/lib/python2.7/
- (virtualenv)/lib/python2.7/distutils
- (virtualenv)/lib/python2.7/site-packages
- (virtualenv)/local
- (virtualenv)/local/bin
- (virtualenv)/local/include
- (virtualenv)/local/lib
-```
-
-### Additional directories 
-
-```
- (virtualenv)/src
- (virtualenv)/var
- (virtualenv)/var/run
- (virtualenv)/var/log
-```
-
 ### Checking what is installed
 
 For listing all installed Python packages we can use yolk. This is a simple console program 
@@ -63,6 +39,29 @@ pip             - 1.1          - active
 wsgiref         - 0.1.2        - active development (/usr/lib/python2.7)
 yolk            - 0.4.3        - active 
 ```
+
+### Default directory structure after creation virtual environment
+
+```
+ (virtualenv)/bin
+ (virtualenv)/include
+ (virtualenv)/lib
+ (virtualenv)/lib/python2.7/
+ (virtualenv)/lib/python2.7/distutils
+ (virtualenv)/lib/python2.7/site-packages
+ (virtualenv)/local
+ (virtualenv)/local/bin
+ (virtualenv)/local/include
+ (virtualenv)/local/lib
+```
+
+### Additional directories 
+
+ - (virtualenv)/src is used for all python sources
+ - (virtualenv)/run for all runtime data
+ - (virtualenv)/log for logs
+ - (virtualenv)/data for databases, data files
+ - (virtualenv)/etc contains project configuration files, links
 
 
 ### Links
