@@ -55,8 +55,10 @@ virtualenvwrapper provides the following hooks:
 Add two lines to your .bashrc to set the location where the virtual environments should live 
 and the location of the script installed with this package:
 
+```
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper_bashrc
+```
 
 *Links:*
 
@@ -65,6 +67,30 @@ source /usr/local/bin/virtualenvwrapper_bashrc
  - Rich Leland has created a [short screencast](http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/) showing off the features of virtualenvwrapper. 
  - User and developer [documentation](http://virtualenvwrapper.readthedocs.org/)
 
+
+### pip
+
+Pip stands for pip installs Python packages. It is a replacement for easy_install that provides some great improvements including requirements files and support for version control systems. Requirements files are plain text files that contain a list of packages to be installed. These text files allow you to create repeatable installations.
+```
+argparse==1.2.1
+distribute==0.6.24
+wsgiref==0.1.2
+```
+Once you have a requirements file, Installing a package using pip is as simple as the following command:
+```
+pip install -r /path/to/requirements.txt
+```
+
+To make requirements file
+```
+pip freeze > /path/to/requirements.txt
+```
+This will inspect the current environment and generate a requirements files that contains explicit version number for each of the installed packages.
+
+*Links*
+
+ - [Documentation for pip](http://www.pip-installer.org/en/latest/)
+ 
 
 ### Checking what is installed
 
