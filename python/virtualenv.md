@@ -135,8 +135,52 @@ yolk            - 0.4.3        - active
  - (virtualenv)/log for logs
  - (virtualenv)/data for databases, data files
  - (virtualenv)/etc contains project configuration files, links
+ - (virtualenv)/tests contains tests for whole project
 
-### Git repository for codes
+### Git repository for sources
+
+Make the ignore file .gitignore. See example below
+
+```
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
+# Log files
+*.log
+```
+
+Create GIT repository in (virtualenv)/src
+
+```
+(test-env)$ git init
+(test-env)$ git add .
+(test-env)$ git commit -m "Initial commit"
+```
 
 
 ### Links
