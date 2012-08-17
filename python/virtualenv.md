@@ -19,6 +19,15 @@
     
     ```$ _```
 
+ * [Virtualenv Tutorial](http://simononsoftware.com/virtualenv-tutorial/)
+
+### virtualenvwrapper
+
+ -  [virtualenvwrapper](http://www.doughellmann.com/projects/virtualenvwrapper/)
+ - Rich Leland has created a [short screencast](http://mathematism.com/2009/07/30/presentation-pip-and-virtualenv/) showing off the features of virtualenvwrapper. 
+ - User and developer [documentation](http://virtualenvwrapper.readthedocs.org/)
+
+
 ### Checking what is installed
 
 For listing all installed Python packages we can use yolk. This is a simple console program 
@@ -63,10 +72,11 @@ yolk            - 0.4.3        - active
  - (virtualenv)/data for databases, data files
  - (virtualenv)/etc contains project configuration files, links
 
+### Git repository for codes
+
 
 ### Links
 
- * [Virtualenv Tutorial](http://simononsoftware.com/virtualenv-tutorial/)
  * [Setting up a Django environment and project structure](http://www.gyford.com/phil/writing/2010/09/29/django-environment.php)
  
  
