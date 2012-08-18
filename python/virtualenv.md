@@ -116,27 +116,31 @@ yolk            - 0.4.3        - active
 ### Default directory structure after creation virtual environment
 
 ```
- (virtualenv)/bin
- (virtualenv)/include
- (virtualenv)/lib
- (virtualenv)/lib/python2.7/
- (virtualenv)/lib/python2.7/distutils
- (virtualenv)/lib/python2.7/site-packages
- (virtualenv)/local
- (virtualenv)/local/bin
- (virtualenv)/local/include
- (virtualenv)/local/lib
+    (virtualenv)/bin
+    (virtualenv)/include
+    (virtualenv)/lib
+    (virtualenv)/lib/python2.7/
+    (virtualenv)/lib/python2.7/distutils
+    (virtualenv)/lib/python2.7/site-packages
+    (virtualenv)/local
+    (virtualenv)/local/bin
+    (virtualenv)/local/include
+    (virtualenv)/local/lib
 ```
 
-### Additional directories 
+### Additional directories (optional, just as example)
 
- - (virtualenv)/src is used for all python sources
- - (virtualenv)/run for all runtime data
- - (virtualenv)/log for logs
- - (virtualenv)/data for databases, data files
- - (virtualenv)/etc contains project configuration files, links
- - (virtualenv)/tests contains tests for whole project
-
+```
+    (virtualenv)/cache   a filesystem-based cache
+    (virtualenv)/src     is used for all python sources
+    (virtualenv)/run     for all runtime data, pid files
+    (virtualenv)/log     for logs
+    (virtualenv)/data    for databases (sqlite), data files
+    (virtualenv)/etc     contains project configuration files, links
+    (virtualenv)/tests   contains tests for whole project
+    (virtualenv)/sock    Unix socket files
+    (virtualenv)/tmp     temporary files
+```
 ### Git repository for sources
 
 Make the ignore file .gitignore. See example below
