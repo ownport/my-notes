@@ -21,6 +21,18 @@ virtualenv is a tool to create isolated Python environments.
     
     ```$ _```
 
+ * This creates a virtualenv that uses Python 2.6 instead of the default Python 2.7.
+ 
+```
+$ virtualenv --python=/usr/bin/python2.6 myenv-py26
+
+Running virtualenv with interpreter /usr/bin/python2.6
+New python executable in myenv-py26/bin/python2.6
+Also creating executable in myenv-py26/bin/python
+Installing distribute.......................done.
+Installing pip..............................done.
+```
+
  - [virtualenv documentation](http://www.virtualenv.org/en/latest/index.html)
  - [Virtualenv Tutorial](http://simononsoftware.com/virtualenv-tutorial/)
 
