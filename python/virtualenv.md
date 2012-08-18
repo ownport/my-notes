@@ -92,6 +92,36 @@ This will inspect the current environment and generate a requirements files that
  - [Documentation for pip](http://www.pip-installer.org/en/latest/)
  
 
+### Bootstrapping environments
+
+Virtualenv has a few hooks which can be used by a custom bootstrap script. This can be useful to automatically install a few additional packages after creating a virtual environment.
+
+In this small example, the bootstrap script will create a virtual environment and easy_install yolk for you:
+
+```python
+import virtualenv, textwrap
+output = virtualenv.create_bootstrap_script(textwrap.dedent("""
+def after_install(options, home_dir):
+    subprocess.call([join(home_dir, 'bin', 'easy_install'), 'yolk'])
+"""))
+print output
+```
+
+You basically pass a string with the additional Python code to the create_bootstrap_script function of virtualenv. It will then return the modified virtualenv script with your additional code inserted. You can then use the modified script to create virtual environments just like the original one.
+
+To test the above bootstrap script, paste the code into a file, run it and save the output to a new file:
+
+```python main.py > venv-yolk.py```
+
+The venv-yolk.py file can now be used just like the original virtualenv script. In fact, it is the virtualenv script with the above after_install function added:
+
+```python venv-yolk.py foobar```
+
+#### Links
+
+ - [Working with virtualenv by Arthur Koziel](http://www.arthurkoziel.com/2008/10/22/working-virtualenv/)
+
+
 ### Checking what is installed
 
 For listing all installed Python packages we can use yolk. This is a simple console program 
@@ -199,5 +229,7 @@ Committing more work:
  - [Setting up a Django environment and project structure](http://www.gyford.com/phil/writing/2010/09/29/django-environment.php)
  - [Best practices to work with 3rd party applications](https://code.djangoproject.com/wiki/BestPracticesToWorkWith3rdPartyAppsAndMakingYoursPortable)
  - [Basic Django deployment with virtualenv, fabric, pip and rsync](http://www.caktusgroup.com/blog/2010/04/22/basic-django-deployment-with-virtualenv-fabric-pip-and-rsync/)
+ - [Django Project Conventions, Revisited by Zachary Voase](http://blog.zacharyvoase.com/2010/02/03/django-project-conventions/)
+ 
  
  
