@@ -99,6 +99,21 @@ pip freeze > /path/to/requirements.txt
 ```
 This will inspect the current environment and generate a requirements files that contains explicit version number for each of the installed packages.
 
+Uninstall a package
+```
+$ pip uninstall yolk
+```
+
+GitHub or Bitbucket
+
+If you use github or bitbucket, it's easy to point your requirements file at third party repos, just be sure to specify an egg-name:
+```
+-e git+git@github.com:coleifer/django-relationships.git#egg=relationships
+-e git+http://github.com/alex/django-taggit.git#egg=taggit
+-e hg+http://bitbucket.org/andrewgodwin/south/#egg=south
+```
+These three examples illustrate cloning from a read/write repo over ssh, a read-only repo over http, and a mercurial repo over http. With git, behind-the-scenes pip is just git clone-ing, so if it works with git clone, it should work with pip.
+
 #### Links
 
  - [Documentation for pip](http://www.pip-installer.org/en/latest/)
@@ -242,6 +257,7 @@ Committing more work:
  - [Best practices to work with 3rd party applications](https://code.djangoproject.com/wiki/BestPracticesToWorkWith3rdPartyAppsAndMakingYoursPortable)
  - [Basic Django deployment with virtualenv, fabric, pip and rsync](http://www.caktusgroup.com/blog/2010/04/22/basic-django-deployment-with-virtualenv-fabric-pip-and-rsync/)
  - [Django Project Conventions, Revisited by Zachary Voase](http://blog.zacharyvoase.com/2010/02/03/django-project-conventions/)
- 
- 
+ - [Notes on using pip and virtualenv with Django](http://www.saltycrane.com/blog/2009/05/notes-using-pip-and-virtualenv-django/)
+ - [Using virtualenv, pip and django-site-gen to quickly start new Django projects](http://charlesleifer.com/blog/using-virtualenv-pip-and-django-site-gen-to-quickly-start-new-django-projects/)
+ - [Starting a Django Project the Right Way](http://www.jeffknupp.com/blog/2012/02/09/starting-a-django-project-the-right-way/)
  
