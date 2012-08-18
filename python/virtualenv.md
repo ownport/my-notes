@@ -194,5 +194,6 @@ Committing more work:
 
  - [Setting up a Django environment and project structure](http://www.gyford.com/phil/writing/2010/09/29/django-environment.php)
  - [Best practices to work with 3rd party applications](https://code.djangoproject.com/wiki/BestPracticesToWorkWith3rdPartyAppsAndMakingYoursPortable)
+ - [Basic Django deployment with virtualenv, fabric, pip and rsync](http://www.caktusgroup.com/blog/2010/04/22/basic-django-deployment-with-virtualenv-fabric-pip-and-rsync/)
  
  
