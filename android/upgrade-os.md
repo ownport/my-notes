@@ -18,3 +18,9 @@ $ sudo apt-get install heimdall
 $ sudo apt-get install heimdall-frontend 
 ```
 
+For the steps required to flash an Android ROM from Linux onto your Samsung device using Heimdall, see [THIS](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) page.
+
+### Links
+
+ - [The Heimdall source from GitHub](https://github.com/Benjamin-Dobell/Heimdall)
+ - [Heimdall firmware packages for stock GT-I9000 firmwares](http://forum.xda-developers.com/showthread.php?t=1196179)
