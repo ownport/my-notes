@@ -20,6 +20,12 @@ $ sudo apt-get install heimdall-frontend
 
 For the steps required to flash an Android ROM from Linux onto your Samsung device using Heimdall, see [THIS](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) page.
 
+### Firmwares for Russia & Ukraine
+```
+ Russia	            2011 November	2.3.6	 I9000XWJVW ##	I9000SERJV5
+ Ukraine (Kyivstar)	2011 October	2.3.3	 I9000XWJVN ##	I9000OXEJV3
+```
+
 ### Links
 
  - [The Heimdall source from GitHub](https://github.com/Benjamin-Dobell/Heimdall)
