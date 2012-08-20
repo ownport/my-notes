@@ -25,3 +25,4 @@ For the steps required to flash an Android ROM from Linux onto your Samsung devi
  - [The Heimdall source from GitHub](https://github.com/Benjamin-Dobell/Heimdall)
  - [Heimdall firmware packages for stock GT-I9000 firmwares](http://forum.xda-developers.com/showthread.php?t=1196179)
  - [CyanogenMod, Samsung Galaxy S: Full Update Guide](http://wiki.cyanogenmod.com/wiki/Samsung_Galaxy_S:_Full_Update_Guide)
+ - [Samsung firmwares](http://www.sammobile.com/)
