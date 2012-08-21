@@ -41,12 +41,6 @@ SOLID это аббревиатура пяти основных принципо
 
  - Роберт С. Мартин, Джеймс В. Ньюкирк, Роберт С. Косс Быстрая разработка программ. Принципы, примеры, практика — Вильямс, 2004, ISBN 5-8459-0558-3, ISBN 0-13-597444-5
 
-## Ссылки (for review)
-
- - [Принципы проектирования классов (S.O.L.I.D.)](http://blog.byndyu.ru/2009/10/solid.html)
- - [Доступно о SOLID](http://muradovm.blogspot.com/2012/03/solid.html)
-
-
 ## Ссылки
 
  - [The Principles of OOD](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
@@ -57,5 +51,6 @@ SOLID это аббревиатура пяти основных принципо
  - [Interface segregation principle, ISP](http://en.wikipedia.org/wiki/Interface_segregation_principle)
  - [Dependency inversion principle, DIP](http://en.wikipedia.org/wiki/Dependency_inversion_principle)]
  - [Хороший дизайн должен быть SOLID: TOP-5 архитектурных принципов](http://igor.quatrocode.com/2008/09/solid-top-5.html)
+ - [Доступно о SOLID](http://muradovm.blogspot.com/2012/03/solid.html)
 
 
