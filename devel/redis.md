@@ -21,6 +21,10 @@ The way it works is simple:
  
 Those two commands are all you need to build a messaging system with Redis.
 
+## Open questions
+
+ - Should we use [pipelining](http://rediscookbook.org/pipeline_multiple_commands.html) as must? 
+
 ## Links
 
  - [Redis Pub/Sub…how does it work?](http://robots.thoughtbot.com/post/6325247416/redis-pub-sub-how-does-it-work)
