@@ -10,6 +10,17 @@ Redis also supports trivial-to-setup master-slave replication, with very fast no
 
 Other features include a simple check-and-set mechanism, pub/sub and configuration settings to make Redis behave like a cache.
 
+## Messaging via RedisRPC
+
+The [PUBLISH](http://redis.io/commands/subscribe) and [SUBSCRIBE](http://redis.io/commands/publish) commands enable you to do quick messaging and communication between processes. 
+
+The way it works is simple:
+
+ - SUBSCRIBE will listen to a channel
+ - PUBLISH allows you to push a message into a channel
+ 
+Those two commands are all you need to build a messaging system with Redis.
+
 ## Links
 
  - [Redis Pub/Sub…how does it work?](http://robots.thoughtbot.com/post/6325247416/redis-pub-sub-how-does-it-work)
