@@ -1,0 +1,5 @@
+# ltrace
+
+[ltrace](http://www.ltrace.org/) intercepts and records dynamic library calls which are called by an executed process and the signals received by that process. It can also intercept and print the system calls executed by the program.
+
+
