@@ -9,3 +9,6 @@
  5. Store to local file store, database and index
  
 Add in scheduling, throttling, status monitoring, scale up by flicking on more servers.
+
+From [Python distributed programming using gevent and redis](http://pydanny-event-notes.readthedocs.org/en/latest/KiwiPycon2011/python_dist_gevent_redis.html), [presentation](http://www.slideshare.net/alexdong/kiwipycon2011-asyncwithgeventredis)
+
