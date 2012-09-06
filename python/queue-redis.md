@@ -22,9 +22,13 @@ There are HTTP clients for pratically all languages. That's all that it takes to
  - [redis-queue, A Simple Tasks Queue Based on Redis DB](http://code.google.com/p/redis-queue/)
  - [Implement a Simple FIFO Queue](http://rediscookbook.org/implement_a_fifo_queue.html)
  - [Simple python queue with Redis](http://peter-hoffmann.com/2012/python-simple-queue-redis-queue.html)
-
+ - [flask-redis](http://flask.pocoo.org/snippets/73/) A basic Message Queue with Redis for flask.
  - [HotQueue](http://pypi.python.org/pypi/hotqueue/0.2.1) is a Python library that allows you to use Redis as a message queue within your Python programs.
  - [RedisRPC](http://pypi.python.org/pypi/redisrpc) is the easiest to use RPC library. It has implementations in Ruby, PHP, and Python.
+ - [celery](http://celeryproject.org/) An asynchronous task queue/job queue based on distributed message passing. Much more advanced. Can be used with different storage backends.
+ - [rq](http://nvie.com/rq/) Simple python library for queueing jobs and processing them in the background with workers.
+ - [resque](https://github.com/defunkt/resque) is a Redis-backed Ruby library for creating background jobs, placing them on multiple queues, and processing them later. Used at github. Includes a nice monitoring web interface.
+ - [pyres](https://github.com/binarydud/pyres) A resque clone in python.
  
 ## Alternatives (not only Python)
  - [defunkt/resque](https://github.com/defunkt/resque) Resque is a Redis-backed Ruby library for creating background jobs, placing them on multiple queues, and processing them later.
