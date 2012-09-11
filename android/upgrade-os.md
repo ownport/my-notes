@@ -26,6 +26,20 @@ For the steps required to flash an Android ROM from Linux onto your Samsung devi
  Ukraine (Kyivstar)	2011 October	2.3.3	 I9000XWJVN ##	I9000OXEJV3
 ```
 
+### IMEI backup
+
+For backup you just need to store the next files:
+
+ - \efs\imei\bt.txt
+ - \efs\imei\mps_code.dat
+ - \efs\.nv2.bak
+ - \efs\.nv2.bak.md5
+ - \efs\.nv_data.bak
+ - \efs\.nv_data.bak.md5
+ - \efs\.nv_state
+
+IMEI and region stored in ".nv_data.bak"
+
 ### Links
 
  - [The Heimdall source from GitHub](https://github.com/Benjamin-Dobell/Heimdall)
@@ -33,5 +47,6 @@ For the steps required to flash an Android ROM from Linux onto your Samsung devi
  - [CyanogenMod, Samsung Galaxy S: Full Update Guide](http://wiki.cyanogenmod.com/wiki/Samsung_Galaxy_S:_Full_Update_Guide)
  - [Samsung firmwares](http://www.sammobile.com/)
  - [Android - Прошивки](http://4pda.ru/forum/index.php?showforum=268)
+ - [Samsung GT-I9000 Galaxy S - Прошивка (OS 2.3)](http://4pda.ru/forum/index.php?showtopic=222559)
  
  
