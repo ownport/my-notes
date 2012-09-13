@@ -13,3 +13,5 @@ m3ua-up.py script is available [m3ua-up.py](https://github.com/ownport/my-notes/
   - select dlr and filter messages by this number 'sccp.slr==DLR'
   - find dlr in RLSD message
   - filter: sccp.slr==slr1||sccp.slr==slr2||sccp.dlr==slr1||scccp.dlr==slr2
+  
+* filter ISUP (IAM) messages: isup.message_type==1
