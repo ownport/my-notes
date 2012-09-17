@@ -1,0 +1,86 @@
+//
+// dot -T png github_architecture.gv -o github_architecture.png && eog github_architecture.png
+//
+digraph GitHubArchitecture {
+
+    
+    graph [ rankdir = "LR"];
+    label="GitHub Architecture";
+    node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki];
+    edge [arrowsize=0.5,fontname=Verdana,fontsize=8];
+
+    // Nodes
+    request [
+        label="<top> Request | <http> - http | <ssh> - ssh | <git> - git"
+    ];
+    
+    subgraph load_balancers {
+        label="Load Balancer |\ ";
+        node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki1];
+        
+        lb1a [ label="<top> lb1a |\ SW: ldirectord" ];
+        lb1b [ label="<top> lb1b |\ SW: ldirectord" ];
+        lb1a -> lb1b [constraint=false];
+    };
+    
+    subgraph application_servers {
+        label="Application servers";
+        node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki2];
+        fe1 [
+            label="<top> fe1 |\
+                    HW: 8 cores\n 16 GB RAM |\
+                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
+        ];
+        fe2 [
+            label="<top> fe2 |\
+                    HW: 8 cores\n 16 GB RAM |\
+                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
+        ];
+        fe3 [
+            label="<top> fe3 |\
+                    HW: 8 cores\n 16 GB RAM |\
+                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
+        ];
+        fe4 [
+            label="<top> fe4 |\
+                    HW: 8 cores\n 16 GB RAM |\
+                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
+        ];
+    };
+
+    subgraph databases {
+        label = "Databases";
+        node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki3];
+        db1a [
+            label="<top> db1a |\
+                    HW: 8 cores\n 32 GB RAM\n 15k RPM SAS drives |\
+                    SW: mysql"
+        ];
+        db1b [
+            label="<top> db1b |\
+                    HW: 8 cores\n 32 GB RAM\n 15k RPM SAS drives |\
+                    SW: mysql"
+        ];
+        db1a -> db1b [label="drbd", constraint=false];
+    
+    };
+
+    // Links
+    request:top -> lb1a:top;
+    request:top -> lb1b:top;
+    
+    lb1a:top -> { fe1:top; fe2:top; fe3:top; fe4:top; }
+    lb1b:top -> { fe1:top; fe2:top; fe3:top; fe4:top; }
+
+    fe1:top -> db1a:top;
+    fe2:top -> db1a:top;
+    fe3:top -> db1a:top;
+    fe4:top -> db1a:top;
+
+    fe1:top -> db1b:top;
+    fe2:top -> db1b:top;
+    fe3:top -> db1b:top;
+    fe4:top -> db1b:top;
+    
+}
+
