@@ -7,80 +7,58 @@ digraph GitHubArchitecture {
     graph [ rankdir = "LR"];
     label="GitHub Architecture";
     node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki];
-    edge [arrowsize=0.5,fontname=Verdana,fontsize=8];
+    edge [arrowsize=0.5,fontname=Verdana,fontsize=8,penwidth=.5];
 
     // Nodes
     request [
-        label="<top> Request | <http> - http | <ssh> - ssh | <git> - git"
+        label="<title> Request |\
+               <http> - http | <ssh> - ssh | <git> - git"
     ];
     
-    subgraph load_balancers {
-        label="Load Balancer |\ ";
-        node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki1];
-        
-        lb1a [ label="<top> lb1a |\ SW: ldirectord" ];
-        lb1b [ label="<top> lb1b |\ SW: ldirectord" ];
-        lb1a -> lb1b [constraint=false];
-    };
-    
-    subgraph application_servers {
-        label="Application servers";
-        node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki2];
-        fe1 [
-            label="<top> fe1 |\
-                    HW: 8 cores\n 16 GB RAM |\
-                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
-        ];
-        fe2 [
-            label="<top> fe2 |\
-                    HW: 8 cores\n 16 GB RAM |\
-                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
-        ];
-        fe3 [
-            label="<top> fe3 |\
-                    HW: 8 cores\n 16 GB RAM |\
-                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
-        ];
-        fe4 [
-            label="<top> fe4 |\
-                    HW: 8 cores\n 16 GB RAM |\
-                    SW: nginx\n 16 unicorn working processes\n Ruby on Rails"
-        ];
-    };
+    lb1a_1b [ 
+        label="<title> Load balancers |\
+               <servers> names: lb1a..lb1b (2 servers) |\
+               <hw> HW: Xen instances |\
+               <sw> SW: ldirectord, smoke service |\
+               active/standby",
+        fillcolor=khaki1 
+    ];
 
-    subgraph databases {
-        label = "Databases";
-        node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki3];
-        db1a [
-            label="<top> db1a |\
-                    HW: 8 cores\n 32 GB RAM\n 15k RPM SAS drives |\
-                    SW: mysql"
-        ];
-        db1b [
-            label="<top> db1b |\
-                    HW: 8 cores\n 32 GB RAM\n 15k RPM SAS drives |\
-                    SW: mysql"
-        ];
-        db1a -> db1b [label="drbd", constraint=false];
-    
-    };
+    fe1_4 [
+        label="<title> Frontend servers |\
+               <servers> names: fe1..fe4 (4 servers)|\
+               <hw> HW (each server): 8 cores\n 16 GB RAM |\
+               <sw> SW: nginx\n 16 unicorn working processes,\n \
+               Ruby on Rails,\n 4 x ProxyMachines behind HAProxy, \n\
+               Chimney, sshd, Gerve (Git sERVE)",
+        fillcolor=khaki2            
+    ];
 
+    db1a_1b [
+        label="<title> Database servers |\
+               <servers> names: db1a..db1b |\
+               <hw> HW (each servers): 8 cores\n 32 GB RAM\n 15k RPM SAS drives |\
+               <sw> SW: mysql, redis, DRDB",
+        fillcolor=khaki3
+    ];
+
+    fs1a_4b [
+        label="<title> File servers  |\
+               <servers> names: fs1a..fs4a,fs1b..fs4b (4 x server pairs) |\
+               <hw> HW (each server): 8 cores\n 16 GB RAM\n 6x300GB 15K RPM SAS \
+                    drives \narranged in RAID 10\n |\
+                    server pair: active/standby |\
+               <sw> DRBD, 2 x Ernie RPC servers behind HAProxy\n\
+               Each Ernie spawns 15 Ruby workers \n\
+               Memcache servers run on each slave FS (12Gb used)",
+        fillcolor=khaki4
+    ];
+    
     // Links
-    request:top -> lb1a:top;
-    request:top -> lb1b:top;
-    
-    lb1a:top -> { fe1:top; fe2:top; fe3:top; fe4:top; }
-    lb1b:top -> { fe1:top; fe2:top; fe3:top; fe4:top; }
+    request:title -> lb1a_1b:title;
+    lb1a_1b:title -> fe1_4:title [dir=both];
+    fe1_4:title -> db1a_1b:title [dir=both];
+    fe1_4:title -> fs1a_4b:title;
 
-    fe1:top -> db1a:top;
-    fe2:top -> db1a:top;
-    fe3:top -> db1a:top;
-    fe4:top -> db1a:top;
-
-    fe1:top -> db1b:top;
-    fe2:top -> db1b:top;
-    fe3:top -> db1b:top;
-    fe4:top -> db1b:top;
-    
 }
 
