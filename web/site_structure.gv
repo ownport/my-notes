@@ -1,0 +1,32 @@
+//
+// dot -T png site_structure.gv -o site_structure.png && eog site_structure.png
+//
+digraph site_structure {
+    
+    graph [ rankdir = "LR"];
+    label="Web site structure";
+    node [shape=record,fontname=Verdana,fontsize=8];
+    edge [arrowsize=0.5,fontname=Verdana,fontsize=8,penwidth=.5];
+
+    // Nodes
+    host [label="http(s):\/\/\<domain_name\>\/"];
+    robots_txt [label="robots.txt"];
+    sitemaps [label="sitemaps.xml|\
+                    UTF-8 encoded \n\
+                    plain text or compressed in .gz format"];
+    links [label="links, urls"];
+    pages [label="Pages"];
+    images [label="Images"]
+
+    // Links
+    host -> robots_txt;
+    host -> pages;
+    host -> images;
+    host -> sitemaps;
+    robots_txt -> sitemaps [label="sitemap"];
+    sitemaps -> links;
+    links -> pages;
+    links -> images;
+    pages -> links;
+    
+}
