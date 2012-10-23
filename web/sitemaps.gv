@@ -1,0 +1,41 @@
+//
+// dot -T png sitemaps.gv -o sitemaps.png && eog sitemaps.png
+//
+digraph site_structure {
+    
+    graph [ rankdir = "LR"];
+    label="Sitemaps structure";
+    node [shape=record,fontname=Verdana,fontsize=8];
+    edge [arrowsize=0.5,fontname=Verdana,fontsize=8,penwidth=.5];
+
+    // Nodes
+    robots_txt [label="robots.txt |\
+                        Sitemap: \<sitemap_location\>"];
+    
+    sitemap_protocol [label="Sitemap Protocol"];
+    sitemap_index [label="Sitemaps index"];
+    sitemap_file [label="Sitemap file |\
+                        UTF-8 encoded, \n\
+                        a plain text list of URLs or syndication feed or\n\
+                        it can be compressed in .gz format\n\
+                        max size: 10MB, 50k URLs"];
+    xml_tags [label="XML tags"];
+    urlset [label="urlset |\
+                    xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'"
+    ];
+    url [label="url |\
+                loc |\
+                lastmod |\
+                changefreq |\
+                priority"];
+    
+    // Links
+    robots_txt -> sitemap_protocol;
+    sitemap_protocol -> xml_tags [label="consists"];
+    sitemap_protocol -> sitemap_index;
+    sitemap_index -> sitemap_file [label="1..n"];
+    sitemap_protocol -> sitemap_file;
+    sitemap_file -> xml_tags [label="consists"];
+    xml_tags -> urlset;
+    urlset -> url;
+}
