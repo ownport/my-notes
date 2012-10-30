@@ -1,0 +1,79 @@
+//
+// dot -T png openstack-swift-architecture.gv -o openstack-swift-architecture.png && eog openstack-swift-architecture.png
+//
+digraph OpenStackSwiftArchitecture {
+
+    
+    graph [ rankdir = "LR"];
+    label="OpenStack Swift Architecture\n\
+           http://docs.openstack.org/developer/swift/overview_architecture.html";
+    node [shape=record,fontname=Verdana,fontsize=8,style=filled,fillcolor=khaki];
+    edge [arrowsize=0.5,fontname=Verdana,fontsize=8,penwidth=.5];
+
+    // Nodes
+    
+    client [
+        label="<top> Client"
+    ];
+    
+    proxy [
+        label="<top> Proxy |\
+               - A large number of failures are handled in the proxy\n\n\
+               - Objects are streamed directly through the proxy \n\
+               to or from the user, the proxy does not spool them"
+    ];
+    
+    accounts [
+        label="<top> Accounts |\
+               It is responsible for listings of containers rather \n\
+               than objects"
+    ];
+
+    containers [
+        label="<top> Containers |\
+               The primary job is to handle listings of objects. It \n\
+               doesn’t know where those object’s are, just what objects\n\
+               are in a specific container. The listings are stored as \n\
+               sqlite database files, and replicated across the cluster\n\
+               similar to how objects are. Statistics are also tracked \n\
+               that include the total number of objects, and total storage\n\
+               usage for that container."
+    ];
+
+    objects [
+        label="<top> Objects |\
+               - very simple blob storage server that can store, retrieve\n\
+               and delete objects stored on local devices\n\n\
+               - Objects are stored as binary files on the filesystem with\n\
+               metadata stored in the file’s extended attributes (xattrs). \n\
+               This requires that the underlying filesystem choice for \n\
+               object servers support xattrs on files\n\n\
+               - Each object is stored using a path derived from the object\n\
+               names hash and the operations timestamp\n\n\
+               - A deletion is treated as a version of the file (a 0 byte \n\
+               file ending with ”.ts”, which stands for tombstone)"
+    ];
+
+    rings [
+        label="<top> Rings |\
+               <accounts> Ring for accounts|\
+               <containers> Ring for containers |\
+               <objects> Ring for objects |\
+                - mapping between the names of entities \n\
+                stored on disk and their physical location\n\n\
+                - to perform any operation on an object, \n\
+                container, or account, it will be needed to\n\
+                interact with the appropriate ring to determine\n\
+                its location in the cluster"
+    ];
+
+    // Links
+    client -> proxy [label="public API"];
+    
+    proxy -> rings:top;
+    
+    rings:accounts -> accounts;
+    rings:containers -> containers;
+    rings:objects -> objects;
+    
+}
