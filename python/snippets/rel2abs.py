@@ -185,4 +185,8 @@ if __name__ == '__main__':
                     'http://www.exampe.com'
     ) == '<a href="http://www.exampe.com/page/1"> page 1 </a> <a href="http://www.exampe.com/page/2"> page 2 </a>'
     
+    assert rel2abs(
+                    '<a href="http://www.google.com/"> Google </a>', 
+                    'http://www.exampe.com'
+    ) == '<a href="http://www.google.com/"> Google </a>'
 
