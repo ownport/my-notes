@@ -1,10 +1,8 @@
-# extracted from ginkgo 
-# https://github.com/progrium/ginkgo/blob/master/ginkgo/util.py
-#
 def daemonize(preserve_fds=None):
-    """\
-    Standard daemonization of a process.
+    """Standard daemonization of a process.
     http://www.svbug.com/documentation/comp.unix.programmer-FAQ/faq_2.html#SEC16
+    
+    source: https://github.com/progrium/ginkgo/blob/master/ginkgo/util.py
     """
     def _maxfd(limit=1024):
         maxfd = resource.getrlimit(resource.RLIMIT_NOFILE)[1]
