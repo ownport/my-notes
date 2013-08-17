@@ -48,5 +48,5 @@ IMEI and region stored in ".nv_data.bak"
  - [Samsung firmwares](http://www.sammobile.com/)
  - [Android - Прошивки](http://4pda.ru/forum/index.php?showforum=268)
  - [Samsung GT-I9000 Galaxy S - Прошивка (OS 2.3)](http://4pda.ru/forum/index.php?showtopic=222559)
- 
+ - [Acer Stock Firmware Files List (Full, Update and EUUs)](http://forum.xda-developers.com/showthread.php?t=1816560)
  
